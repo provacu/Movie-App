@@ -26,8 +26,18 @@ class MovieFetcher extends React.Component {
     )
       .then((response) => response.json())
       .then((response) => {
-        console.log(response.results); // Вывод в консоль
-        this.setState({ movies: response.results });
+        const filteredMovies = response.results.filter(
+          (movie) =>
+            movie.title &&
+            movie.poster_path &&
+            movie.overview &&
+            movie.release_date &&
+            movie.vote_average &&
+            movie.genre_ids &&
+            movie.vote_count,
+        );
+
+        this.setState({ movies: filteredMovies });
       })
       .catch((err) => this.setState({ error: err.toString() }));
   }

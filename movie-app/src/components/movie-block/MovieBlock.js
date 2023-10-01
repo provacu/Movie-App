@@ -4,13 +4,13 @@ import PropTypes from 'prop-types';
 
 class MovieBlock extends React.Component {
   render() {
-    const { title, imgURL, overview, releaseDate, rating, genre, votes } =
+    const { title, poster, overview, releaseDate, rating, genre, votes } =
       this.props;
 
     return (
       <div>
         <h3>{title}</h3>
-        <img src={imgURL} alt={title} />
+        <img src={poster} alt={title} />
         <p>{overview}</p>
         <p>{releaseDate}</p>
         <p>{rating}</p>
@@ -25,10 +25,10 @@ export default MovieBlock;
 
 MovieBlock.propTypes = {
   title: PropTypes.string.isRequired,
-  imgURL: PropTypes.string.isRequired,
+  poster: PropTypes.string.isRequired,
   overview: PropTypes.string.isRequired,
   releaseDate: PropTypes.string.isRequired,
-  rating: PropTypes.string.isRequired,
-  genre: PropTypes.string.isRequired,
-  votes: PropTypes.string.isRequired,
+  rating: PropTypes.number.isRequired,
+  genre: PropTypes.arrayOf(PropTypes.number).isRequired,
+  votes: PropTypes.number.isRequired,
 };
