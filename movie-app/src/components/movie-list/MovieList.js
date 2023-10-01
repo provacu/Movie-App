@@ -12,12 +12,12 @@ class MovieList extends React.Component {
           <MovieBlock
             key={movie.id}
             title={movie.title}
-            imgURL={movie.imgURL}
-            description={movie.description}
-            date={movie.date}
-            rating={movie.rating}
-            genre={movie.genre}
-            starRating={movie.starRating}
+            imgURL={movie.poster_path}
+            overview={movie.overview}
+            releaseDate={movie.release_date}
+            rating={movie.vote_average}
+            genre={movie.genre_ids}
+            votes={movie.vote_count}
           />
         ))}
       </div>
@@ -33,11 +33,11 @@ MovieList.propTypes = {
       id: PropTypes.number.isRequired,
       title: PropTypes.string.isRequired,
       imgURL: PropTypes.string.isRequired,
-      description: PropTypes.string.isRequired,
-      date: PropTypes.string.isRequired,
+      overview: PropTypes.string.isRequired,
+      releaseDate: PropTypes.string.isRequired,
       rating: PropTypes.number.isRequired,
-      genre: PropTypes.string.isRequired,
-      starRating: PropTypes.number.isRequired,
+      genre: PropTypes.arrayOf(PropTypes.number).isRequired,
+      votes: PropTypes.number.isRequired,
     }),
   ).isRequired,
 };
