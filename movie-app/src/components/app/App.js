@@ -1,11 +1,11 @@
 import React from 'react';
 import MovieList from '../movie-list/MovieList';
 import MovieFetcher from '../movie-fetcher/MovieFetcher';
+import 'antd/dist/reset.css';
 
 function App() {
   return (
     <div>
-      <h1>Movie App</h1>
       <MovieFetcher>
         {({ movies, error }) => {
           if (error) {

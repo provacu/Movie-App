@@ -1,5 +1,6 @@
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
+import { Row, Col } from 'antd';
 import PropTypes from 'prop-types';
 import MovieBlock from '../movie-block/MovieBlock';
 
@@ -8,7 +9,7 @@ class MovieList extends React.Component {
     const { movies } = this.props;
 
     return (
-      <div>
+      <Row gutter={[32]} style={{ margin: '16px 0' }}>
         {movies.map((movie) => {
           const {
             id,
@@ -24,19 +25,21 @@ class MovieList extends React.Component {
           const posterURL = `https://image.tmdb.org/t/p/original${poster}`;
 
           return (
-            <MovieBlock
-              key={id}
-              title={title}
-              poster={posterURL}
-              overview={overview}
-              releaseDate={releaseDate}
-              rating={rating}
-              genre={genre}
-              votes={votes}
-            />
+            <Col key={id} xs={24} sm={20} md={16} lg={14} xl={12} xxl={8}>
+              <MovieBlock
+                key={id}
+                title={title}
+                poster={posterURL}
+                overview={overview}
+                releaseDate={releaseDate}
+                rating={rating}
+                genre={genre}
+                votes={votes}
+              />
+            </Col>
           );
         })}
-      </div>
+      </Row>
     );
   }
 }
