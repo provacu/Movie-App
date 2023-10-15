@@ -9,7 +9,6 @@
     flex-direction: row;
     min-height: 279px; 
     min-width: 451px; 
-    
   }
 
   .movieblock__card--collapsed {
@@ -17,6 +16,7 @@
     min-height: 279px;
     background: #FFFFFF;
     transition: all 1s ease;
+    border-radius: 0 !important;
   }
   
   .movieblock__card--expanded {
@@ -24,9 +24,11 @@
     min-height: 400px;
     background: #FFFFFF;
     transition: all 1s ease;
+    border-radius: 0 !important;
   }
 
   .css-dev-only-do-not-override-pr0fja.ant-card .ant-card-body {
+    border-radius: 0 !important;
     padding: 0;
   }
   

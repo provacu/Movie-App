@@ -131,6 +131,10 @@ class MovieBlock extends React.Component {
                 <div className="movieblock__outer-card-wrapper">
                   <Card
                     align="horizontal"
+                    bodyStyle={{
+                      padding: '0',
+                      borderRadius: '0',
+                    }}
                     className={
                       isCardExpanded
                         ? 'movieblock__card--expanded'
