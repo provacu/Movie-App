@@ -1,0 +1,16 @@
+.searchpanel__input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    /* Если нужно, добавьте фиксированную ширину */
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+  .searchpanel__input {
+    margin: 15px auto;
+    /* Если нужно, установите другую ширину для мобильных устройств */
+    width: 100%;
+  }
+}

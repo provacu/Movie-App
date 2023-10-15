@@ -9,9 +9,23 @@
     flex-direction: row;
     min-height: 279px; 
     min-width: 451px; 
-    box-shadow: 0 4px 12px #00000026 15% !important;
+    
+  }
+
+  .movieblock__card--collapsed {
+    min-width: 451px;
+    min-height: 279px;
+    background: #FFFFFF;
+    transition: all 1s ease;
   }
   
+  .movieblock__card--expanded {
+    min-width: 500px;
+    min-height: 400px;
+    background: #FFFFFF;
+    transition: all 1s ease;
+  }
+
   .css-dev-only-do-not-override-pr0fja.ant-card .ant-card-body {
     padding: 0;
   }
@@ -19,6 +33,13 @@
   .movieblock__image {
     width: 183px;
     height: 279px;
+    transition: all 1s ease-in-out;
+  }
+
+  .movieblock__image-expanded {
+    width: 250px;
+    height: 400px;
+    transition: all 1s ease-in;
   }
   
   .movieblock__info {
@@ -28,14 +49,21 @@
   
   .movieblock__title {
     font-size: 20px;
+    width: 85%;
     font-weight: 400;
+    text-overflow: ellipsis;
+    white-space: normal;
+    overflow-wrap: break-word;
     line-height: 28px;
   }
   
   .movieblock__info-overview {
     font-size: 12px;
     line-height: 22px;
+    padding: 5px;
   }
+
+    
   
   .movieblock__info-date {
     font-size: 12px;
@@ -49,6 +77,30 @@
     font-size: 12px;
     line-height: 18px;
   }
+
+  .movieblock__header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .movieblock__info-rating {
+    border: 2px solid;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   
 .css-dev-only-do-not-override-pr0fja.ant-card {
     border-radius: 0 !important;
@@ -58,3 +110,40 @@
   }
   
   
+
+  @media (max-width: 768px) {
+  .movieblock__outer-card-wrapper {
+    margin: 16px auto;
+  }
+
+  .movieblock__card,
+  .movieblock__card--collapsed,
+  .movieblock__card--expanded {
+    min-width: 100%;
+    min-height: auto;
+  }
+
+  .movieblock__image,
+  .movieblock__image-expanded {
+    width: 100px;
+    height: 150px;
+  }
+
+  .movieblock__info {
+    padding-left: 8px;
+  }
+
+  .movieblock__title {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .movieblock__info-overview,
+  .movieblock__info-date,
+  .movieblock__info-rating,
+  .movieblock__info-genre,
+  .movieblock__info-votes {
+    font-size: 10px;
+    line-height: 16px;
+  }
+}

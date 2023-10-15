@@ -1,0 +1,19 @@
+.paginator {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    bottom: 10px;
+    /* Если нужно, добавьте фиксированную ширину */
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    .paginator {
+      margin: 10px auto;
+      bottom: 5px;
+      /* Если нужно, установите другую ширину для мобильных устройств */
+      width: 100%;
+    }
+}
